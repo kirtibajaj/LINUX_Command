@@ -1,0 +1,3 @@
+ls               list 
+ls -al           list all
+ls -l           long listing(Give details information about each file                  			and directory)
