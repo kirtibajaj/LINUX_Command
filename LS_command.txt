@@ -1,0 +1,23 @@
+BASIC 'ls' command examples in linux
+ls command is one of the most frequently used command in linux . 
+1.list files using ls with no option
+ls with no option list files and directories in bare format where we won't be able to view details like file types, size, modified date and time, permission and links etc.
+2.List files with option -l
+Here, ls -l shows file or directory,size, modified date and time, file or folder name and owner of file and its permission.
+format:-
+----------. (no of links)  root  root  size(in KB)  date (month date)  time  name of file(with extention)
+- (Defines type)---(OWNER)---(GROUP)---(OTHER)
+define type if blank then file otherwise d for directory
+for OWNER, 3 places for permission
+1.READ (r)->4
+2.WRITE(w)->2
+3.execute(x)->1
+we can grant permission as per our convenience
+if 7, r+w+x
+6, r+w
+5, r+x
+similarly, we can define for GROUP and OTHER
+To grant permission we can use following command:
+chmod(change mod)
+Two ways:-
+1.

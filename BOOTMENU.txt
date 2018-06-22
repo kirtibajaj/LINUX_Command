@@ -1,0 +1,23 @@
+LINUX BOOT PROCESS
+When a system switched on and after few moment we get a login prompt. Have we try to find out what all stages of booting sequence has crossed and what happened behind the scene during system boots up.
+Power on
+BIOS(Basic input output system) is a software program comes pre built in a mother board chipset.
+BIOS is used to load and scan for devices such as Harddisk, CD-ROM, RAM etc.
+BIOS searches for MBR(Master boot record: 1st sector ) of the primary hard drive,it scans for 1st stage loader(In  our case boot loader is GRUB ,LILO)  and hands over the responsibility to MBR.
+Boot PROM/FLASH/BIOS is profiecient of laoding to MBR into RAM and executing it.
+MBR (MASTER BOOT RECORD)
+512 bytes of space -> MBR
+MBR contains the information of loader of most operating system e.g UNIX,LINUX and WINDOWS
+MBR holds the small binary information of the first stage of loader.
+MBR consist physical sector of first disk drive(i.e. 512 bytes) and it's not part of any partition 
+placed on the prime disk drive , in the prime sector of the first cylinder of track is 0 and head is 0(this whole path is generally booked for boot programs)
+MBR involve a mini executable programs and a table specify the primary partitions.
+MBR also document which primary partition is ACTIVE.
+The BIOS surrender rights to the first stage boot loader, which then scans partition table and finds second stage boot loader on the partition configured as bootable.
+ BOOT LOADER
+The boot loader termed from 1st stage loader and loads itself into RAM . ALL this go on in milliseconds.
+The default stage 2 boot loader is a GRUB (GRAND UNIFIED BOOT LOADER) or LILO(Linux loader)
+Once GRUB is loaded into RAM then it is search for the location of kernel 
+GRUB is scrutinized the map file to find the kernel image, that is located under(/boot) and laod it
+GRUB loads the kernel image, that is located under(/boot) and load it
+GRUB loads the kernel(vmlinuz-version) from /boot partition
